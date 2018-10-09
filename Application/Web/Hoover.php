@@ -24,9 +24,9 @@ class Hoover {
          $this->content->preserveWhiteSpace = FALSE;
          // @ used to suppress warnings generated from
          // improperly configured web pages
-         @$this->content->loadHTMLFile($url);
-         return $this->content;
+         @$this->content->loadHTMLFile($url);  
       }
+      return $this->content;
    }
 
    /**
@@ -40,8 +40,7 @@ class Hoover {
    public function getTags($url, $tag) {
       $count = 0;
       $result = array();
-      $elements = $this->getContent($url)
-         ->getElementsByTagName($tag);
+      $elements = $this->getContent($url)->getElementsByTagName($tag);
 
       foreach ($elements as $node) {
          $result[$count]['value'] = trim(
@@ -67,18 +66,17 @@ class Hoover {
      */
    public function getAttribute($url, $attr, $domain = NULL) {
       $result = array();
-      $elements = $this->getContent($url)
-                        ->getElementsByTagName('*');
-      foreach ($elemnts as $node) {
-         if ($node->hasAttributes($attr)) {
+      $elements = $this->getContent($url)->getElementsByTagName('*');
+      foreach ($elements as $node) {
+         if ($node->hasAttribute($attr)) {
             $value = $node->getAttribute($attr);
             if ($domain) {
                if (stripos($value, $domain) !== FALSE) {
-                  $result[]  = trim($value);
+                  $result[] = trim($value);
                }
             }
             else {
-               $result = trim($value);
+               $result[] = trim($value);
             }
          }
       }

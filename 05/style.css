@@ -1,0 +1,42 @@
+.container {
+   width: 600px;
+   float: left;
+}
+
+h1 {
+   background-color: #ffff6f;
+}
+
+table {
+   width: 600px;
+   float: left;
+}
+
+.label {
+   background-color: #84bcf2;
+   font-size: 10pt;
+   border: thin solid rgb(29, 10, 10);
+   text-align: right;
+}
+
+.content {
+   background-color: #fdfd9f;
+   border: thin solid #000;;
+}
+
+.error {
+   background-color: #f5e9e9;
+   font-size: 10pt;
+   border-right: thin solid #000;
+   colro: red;
+}
+
+.menuItem {
+   width: 100px;
+   float: left;
+}
+
+hr {
+   width: 100%;
+   float: left;
+}

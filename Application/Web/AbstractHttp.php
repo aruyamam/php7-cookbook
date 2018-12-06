@@ -7,9 +7,9 @@ class AbstractHttp {
    const METHOD_POST                  = 'POST';
    const METHOD_PUT                   = 'PUT';
    const METHOD_DELETE                = 'DELETE';
-   const CONENT_TYPE_HTML             = 'text/html';
-   const CONENT_TYPE_JSON             = 'application/json';
-   const CONENT_TYPE_FROM_URL_ENCODED = 'application/x-www-form-urlencoded';
+   const CONTENT_TYPE_HTML             = 'text/html';
+   const CONTENT_TYPE_JSON             = 'application/json';
+   const CONTENT_TYPE_FROM_URL_ENCODED = 'application/x-www-form-urlencoded';
    const HEADER_CONTENT_TYPE          = 'Content-Type';
    const TRANSPORT_HTTP               = 'http';
    const TRANSPORT_HTTPS              = 'https';

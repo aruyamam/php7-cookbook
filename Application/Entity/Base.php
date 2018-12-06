@@ -20,17 +20,21 @@ class Base {
             $method = 'set' . ucfirst($propertyName);
             $instance->$method($data[$dbColumn]);
          }
+         
          return $instance;
       }
+
       return FALSE;
    }
 
    public function entityToArray() {
       $data = array();
+
       foreach ($this->mapping as $dbColumn => $propertyName) {
          $method = 'get' . ucfirst($propertyName);
          $data[$dbColumn] = $this->$method() ?? NULL;
       }
+
       return $data;
    }
 }

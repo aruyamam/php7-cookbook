@@ -23,7 +23,7 @@ class ServerRequest extends Request implements ServerRequestInterface
       $this->getuploadedFiles;
       $this->getRequestMethod();
       $this->getContentType();
-      $this->getParseBody();
+      $this->getParsedBody();
 
       return $this->withRequestTarget($this->getServerParams()['REQUEST_URI']);
    }
@@ -121,11 +121,11 @@ class ServerRequest extends Request implements ServerRequestInterface
       return $this->contentType;
    }
 
-   public function getParseBody()
+   public function getParsedBody()
    {
       if (!$this->parseBody) {
          if (
-               ($this->getContentType() == Constants::CONTENT_TYPE_FROM_ENCODED
+               ($this->getContentType() == Constants::CONTENT_TYPE_FORM_ENCODED
                   || $this->getContentType() == Constants::CONTENT_TYPE_MULTI_FORM)
                && $this->getRequestMethod() == Constants::METHOD_POST
          ) {
@@ -150,7 +150,7 @@ class ServerRequest extends Request implements ServerRequestInterface
       return $this->parseBody;
    }
 
-   public function withParseBody($data)
+   public function withParsedBody($data)
    {
       $this->parseBody = $data;
 
@@ -174,7 +174,7 @@ class ServerRequest extends Request implements ServerRequestInterface
       return $this;
    }
 
-   public function withoutAttriubtes($name)
+   public function withoutAttribute($name)
    {
       if (isset($this->attributes[$name])) {
          unset($this->attributes[$anme]);

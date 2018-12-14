@@ -42,6 +42,13 @@ class Request extends Message implements RequestInterface
       return $this->method;
    }
 
+   public function withMethod($method)
+   {
+      $this->method = $this->checkMethod($method);
+
+      return $this;
+   }
+
    protected function checkMethod($method)
    {
       if (!$method === NULL) {
